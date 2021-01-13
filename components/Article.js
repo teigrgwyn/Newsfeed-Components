@@ -114,3 +114,59 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+function articleMaker(article) {
+  // STEP1-BEGIN
+  const div = document.createElement('div').classList.add("article");
+  const h2 = document.createElement('h2').textContent = article["title"];
+  
+  const date = document.createElement('p');
+  date.classList.add("date");
+  date.textContent = article["date"];
+  
+  const p1 = document.createElement('p').textContent = article["firstParagraph"];
+  const p2 = document.createElement('p').textContent = article["secondParagraph"];
+  const p3 = document.createElement('p').textContent = article["thirdParagraph"];
+
+  const span = document.createElement('span');
+  span.classList.add("expandButton");
+  span.textContent = "+";
+  // STEP1-END
+
+  // STEP2-BEGIN
+  /*
+    Difference on line below?
+      span.addEventListener('click', (event) => {
+      document.querySelector('.expandButton').addEventListener('click', (event) => {
+      span.querySelector('.expandButton').addEventListener('click', (event) => {
+  */
+  document.querySelector('.expandButton').addEventListener('click', (event) => {
+    span.classList.toggle("article-open");
+  });
+  // STEP2-END
+
+  div.appendChild(h2);
+  div.appendChild(date);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+
+  return div; // returns parent - STEP3
+}
+
+// STEP4-BEGIN
+data.forEach(obj => {
+  let newArticle = articleMaker(obj);
+  document.querySelector('.article').appendChild(newArticle);
+})
+// STEP4-END
+
+// STEP5-BEGIN
+data.push({
+  title: 'Temporary Job Title!',
+  date: 'June 19th, 2019',
+  firstParagraph: `First paragraph string!`,
+  secondParagraph: `Second paragraph string!`,
+  thirdParagraph: `Third paragraph string!`
+});
+// STEP5-END
