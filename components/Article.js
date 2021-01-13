@@ -151,17 +151,20 @@ function articleMaker(article) {
   div.appendChild(p2);
   div.appendChild(p3);
 
-  return div; // returns parent - STEP3
+  return div; // STEP3 - returns parent (whole component)
 }
 
 // STEP4-BEGIN
 data.forEach(obj => {
-  let newArticle = articleMaker(obj);
+  const newArticle = articleMaker(obj);
   document.querySelector('.article').appendChild(newArticle);
 })
 // STEP4-END
 
 // STEP5-BEGIN
+/*
+  Does it still display on page fine by being all the way down here? or does it need to be ran before the forEach loop above?
+*/
 data.push({
   title: 'Temporary Job Title!',
   date: 'June 19th, 2019',
