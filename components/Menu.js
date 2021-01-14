@@ -38,6 +38,8 @@ function menuMaker(arr) {
   const unorderedList = document.createElement('ul');
   // STEP1-END
 
+  menu.appendChild(unorderedList);
+
   // STEP2-BEGIN
   arr.forEach(item => {
     const orderedList = document.createElement('li').textContent = item;
@@ -58,4 +60,5 @@ function menuMaker(arr) {
   return menu;
 }
 
+// appending all children to the 'master' div won't display anything until the 'master' div is appended to document, correct?
 new header = document.body.querySelector('.header').appendChild(menuMaker(menuItems)); // one-liner to add menuItems array to 'header' DOM

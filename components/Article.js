@@ -119,32 +119,26 @@ function articleMaker(article) {
   // STEP1-BEGIN
   const div = document.createElement('div').classList.add("article");
   const h2 = document.createElement('h2').textContent = article["title"];
-  
-  const date = document.createElement('p');
-  date.classList.add("date");
-  date.textContent = article["date"];
-  
+  const date = document.createElement('p').classList.add("date").textContent = article["date"];
   const p1 = document.createElement('p').textContent = article["firstParagraph"];
   const p2 = document.createElement('p').textContent = article["secondParagraph"];
   const p3 = document.createElement('p').textContent = article["thirdParagraph"];
-
-  const span = document.createElement('span');
-  span.classList.add("expandButton");
-  span.textContent = "+";
+  const span = document.createElement('span').classList.add("expandButton").textContent = "+";
   // STEP1-END
 
   // STEP2-BEGIN
   /*
-    Difference on line below?
+    Difference on line below? -> I predict all give same result
       span.addEventListener('click', (event) => {
       document.querySelector('.expandButton').addEventListener('click', (event) => {
       span.querySelector('.expandButton').addEventListener('click', (event) => {
   */
-  document.querySelector('.expandButton').addEventListener('click', (event) => {
+  span.querySelector('.expandButton').addEventListener('click', (event) => {
     span.classList.toggle("article-open");
   });
   // STEP2-END
 
+  // can this be places as early as after step1?
   div.appendChild(h2);
   div.appendChild(date);
   div.appendChild(p1);
