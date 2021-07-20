@@ -10,7 +10,7 @@ In this project we are going to be building a news feed reader. The goal is to h
 * Events and event listeners
 
 ### Set Up The Project With Git
-
+ 
 **Follow these steps to set up and work on your project:**
 
 * [ ] Create a forked copy of this project.
@@ -26,10 +26,10 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Launching the project
 
-* [ ] Navigate to the root of the project with your command line.
-* [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
-* [ ] Run `npm start` to compile your project and launch a development server.
-* [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+* [x] Navigate to the root of the project with your command line.
+* [x] Run `npm install` to download any dependencies listed in the `package.json` file.
+* [x] Run `npm start` to compile your project and launch a development server.
+* [x] Navigate Chrome to the URL indicated in the output of the `npm start` command.
 
 ### Part 1: The Articles Component
 
